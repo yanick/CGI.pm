@@ -7,11 +7,10 @@ BEGIN {
     $fcgi = $@ ? 0 : 1;
 }
 
-use Test::More tests => 9;
+use Test::More tests => 10;
 
 # Shut up "used only once" warnings.
 () = $CGI::Q;
-() = $CGI::Fast::Ext_Request;
 
 SKIP: {
     skip( 'FCGI not installed, cannot continue', 10 ) unless $fcgi;
